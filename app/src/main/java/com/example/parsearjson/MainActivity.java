@@ -1,6 +1,8 @@
 package com.example.parsearjson;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
@@ -20,6 +22,9 @@ import WebServices.WebService;
 public class MainActivity extends AppCompatActivity implements Asynchtask {
 
     private List<Datos> items=new ArrayList<>();
+    private RecyclerView recycle;
+    private RecyclerView.Adapter adapter;
+    private RecyclerView.LayoutManager lManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +46,14 @@ public class MainActivity extends AppCompatActivity implements Asynchtask {
             String volume = c.getString("volume");
             items.add(new Datos(portada,number,volume));
         }
-        
+        recycle = (RecyclerView)findViewById(R.id.reciclador);
+        recycle.setHasFixedSize(true);
+
+        lManager=new LinearLayoutManager(this);
+        recycle.setLayoutManager(lManager);
+
+        adapter= new DatosAdapter(items);
+        recycle.setAdapter(adapter);
+
     }
 }
