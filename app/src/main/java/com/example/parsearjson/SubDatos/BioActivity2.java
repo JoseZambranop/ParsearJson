@@ -69,11 +69,11 @@ public class BioActivity2 extends AppCompatActivity {
                     request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
                 }
                 request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "filedownload.pdf");
-                DownloadManager manager = (DownloadManager) this.getApplicationContext().getSystemService(Context.DOWNLOAD_SERVICE);
+                DownloadManager manager = (DownloadManager) BioActivity2.this.getSystemService(Context.DOWNLOAD_SERVICE);
                 try {
                     manager.enqueue(request);        }
                 catch (Exception e) {
-                    Toast.makeText(this.getApplicationContext(),e.getMessage(),Toast.LENGTH_LONG).show();
+                    Toast.makeText(BioActivity2.this,e.getMessage(),Toast.LENGTH_LONG).show();
                 }
             }
         });
