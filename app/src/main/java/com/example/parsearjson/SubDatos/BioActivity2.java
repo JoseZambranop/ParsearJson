@@ -80,9 +80,6 @@ public class BioActivity2 extends AppCompatActivity {
         String volum=(getIntent().getExtras().getString("curDate"));
         final String Pdf=(getIntent().getExtras().getString("curPdf"));
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Title= (TextView) findViewById(R.id.txtTitleBio);
         Date=(TextView) findViewById(R.id.txtDateBio);
