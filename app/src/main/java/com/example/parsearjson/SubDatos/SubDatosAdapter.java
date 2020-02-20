@@ -32,7 +32,6 @@ public class SubDatosAdapter extends RecyclerView.Adapter<SubDatosAdapter.Person
             SubDatosCardView=(CardView)v.findViewById(R.id.sub_datos_card);
             title=(TextView)v.findViewById(R.id.txtTitle);
             date=(TextView)v.findViewById(R.id.txtDate);
-
         }
 
     }
@@ -44,27 +43,20 @@ public class SubDatosAdapter extends RecyclerView.Adapter<SubDatosAdapter.Person
 
     @Override
     public void onBindViewHolder(@NonNull PersonViewHolder viewHolder, final int i) {
-            //viewHolder.imagen.setImageResource(items.get(i).getImagen());
-           // Picasso.with(viewHolder.imagen.getContext())
-           //    .load(items.get(i).getTitle()).into(viewHolder.imagen);
-
             viewHolder.title.setText(""+items.get(i).getTitle());
             viewHolder.date.setText(""+items.get(i).getDate());
-            /*viewHolder.DatosCardView.setOnClickListener(new View.OnClickListener() {
+            viewHolder.SubDatosCardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-            //*        Bundle bundle =new Bundle();
-                    //bundle.putInt("curImagen",items.get(i).getImagen());
-
-                    bundle.putString("curImagen",items.get(i).getPortada());
-                    bundle.putString("curVolum",items.get(i).getVolume());
-                    bundle.putString("curNumber",items.get(i).getNumber());
-                    Intent iconIntent =new Intent(view.getContext(), BioActivity.class);
+                    Bundle bundle =new Bundle();
+                    bundle.putString("curTitle",items.get(i).getTitle());
+                    bundle.putString("curDate",items.get(i).getDate());
+                    bundle.putString("curPdf",items.get(i).getPdf());
+                    Intent iconIntent =new Intent(view.getContext(), BioActivity2.class);
                     iconIntent.putExtras(bundle);
                     view.getContext().startActivity(iconIntent);
                 }
-            });*/
-
+            });
     }
 
     @Override
